@@ -1,0 +1,242 @@
+@use '../styles/mixins' as *;
+
+.about {
+  background: var(--bg-alt);
+  &-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+    transform: translateY(-50px); 
+    // АДАПТИВ
+    @include respond-to(tablet) {
+      grid-template-columns: 1fr;
+      gap: 2.5rem;
+    }
+  }
+
+  &-text p {
+    color: var(--text-muted);
+    line-height: 1.8;
+    margin-bottom: 1.25rem;
+    font-size: 1rem;
+  }
+
+  &-stats {
+    display: flex;
+    gap: 1rem;
+    margin-top: 2rem;
+    flex-wrap: wrap;
+  }
+
+  &-photo-wrap {
+    display: flex;
+    justify-content: center;
+
+    // АДАПТИВ: Поднимаем фото наверх на планшетах/мобилках
+    @include respond-to(tablet) {
+      order: -1;
+    }
+    @media (max-width: 320px) {
+  .about-grid {
+    transform: none;
+  }
+}
+  }
+}
+
+.stat-card {
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 1rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  transition: border-color 0.2s;
+  flex: 1;
+  min-width: 120px;
+
+  &:hover { border-color: var(--accent); }
+
+  .stat-value {
+    font-family: "JetBrains Mono", monospace;
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: var(--accent);
+  }
+
+  .stat-label {
+    font-size: 0.78rem;
+    color: var(--text-muted);
+  }
+}
+
+.photo {
+  &-card { 
+    position: relative; 
+    width: 100%;
+    max-width: 400px;
+  }
+
+  &-decoration {
+    position: absolute;
+    inset: -12px;
+    border: 2px solid var(--accent);
+    border-radius: 24px;
+    opacity: 0.25;
+    z-index: -1;
+    transform: rotate(3deg);
+  }
+}
+
+// СТИЛИ ТЕРМИНАЛА (BASH WINDOW)
+.terminal-window {
+  background: #0d0e12;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+  overflow: hidden;
+  font-family: 'JetBrains Mono', monospace;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.terminal-bar {
+  background: #161920;
+  padding: 0.6rem 1rem;
+  display: flex;
+  align-items: center;
+  position: relative;
+  border-bottom: 1px solid var(--border);
+
+  .terminal-buttons {
+    display: flex;
+    gap: 6px;
+
+    span {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      display: inline-block;
+    }
+    .btn-close { background: #ef4444; }
+    .btn-minimize { background: #eab308; }
+    .btn-maximize { background: #22c55e; }
+  }
+
+  .terminal-title {
+    color: var(--text-muted);
+    font-size: 0.75rem;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+}
+
+.terminal-body {
+  padding: 1.25rem;
+  font-size: 0.85rem;
+  line-height: 1.6;
+  color: #e2e8f0;
+
+  .terminal-line {
+    display: flex;
+    gap: 0.5rem;
+    align-items: center;
+
+    &.margin-top {
+      margin-top: 1.5rem;
+    }
+  }
+
+  .terminal-prompt {
+    color: #22c55e;
+  }
+
+  .terminal-command {
+    color: #f1f5f9;
+  }
+
+  .terminal-cursor {
+    animation: blink 1s step-end infinite;
+    color: var(--accent);
+    font-weight: bold;
+  }
+}
+
+// ИНФОРМАЦИЯ NEOFETCH ВНУТРИ КОНСОЛИ
+.neofetch-content {
+  display: flex;
+  gap: 1.5rem;
+  margin-top: 1rem;
+  padding-left: 0.5rem;
+
+  @include respond-to(tablet) {
+    flex-direction: column;
+    gap: 1rem;
+  }
+}
+
+.neofetch-logo {
+  color: var(--accent);
+  display: flex;
+  flex-direction: column;
+  font-weight: bold;
+  line-height: 1.2;
+  white-space: pre;
+}
+
+.neofetch-info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+
+  p {
+    margin: 0 ;
+    color: var(--text);
+    font-size: 0.85rem;
+  }
+
+  .info-key {
+    color: var(--accent);
+    font-weight: 600;
+  }
+  .info-value {
+  color: #e2e8f0;
+}
+}
+
+@keyframes blink {
+  from, to { opacity: 0; }
+  50% { opacity: 1; }
+}
+
+@media (max-width: 320px) {
+  .about-grid {
+    transform: none;
+    gap: 24px;
+  }
+
+  .terminal-window {
+    max-width: 260px;
+    margin: 0 auto;
+  }
+
+  .terminal-body {
+    padding: 12px;
+    font-size: 12px;
+  }
+
+  .terminal-bar {
+    padding: 8px 12px;
+  }
+
+  .neofetch-content {
+    gap: 10px;
+  }
+
+  .neofetch-info p {
+    font-size: 6px ;
+  }
+}

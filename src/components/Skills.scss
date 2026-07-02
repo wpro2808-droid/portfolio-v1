@@ -1,0 +1,104 @@
+@use '../styles/mixins' as *;
+
+.skills {
+  background: var(--bg);
+
+  &-subtitle {
+    color: var(--text-muted);
+    margin-bottom: 2.5rem;
+    font-size: 0.95rem;
+  }
+
+  &-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.25rem;
+    margin-bottom: 3rem;
+
+    // АДАПТИВ: Переключаем на 1 колонку
+    @include respond-to(mobile) {
+      grid-template-columns: 1fr;
+    }
+  }
+}
+
+.skill-item {
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 1.25rem;
+  transition: border-color 0.2s, transform 0.2s;
+
+  &:hover {
+    border-color: var(--accent);
+    transform: translateY(-2px);
+  }
+}
+
+.skill {
+  &-top {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    margin-bottom: 0.75rem;
+  }
+
+  &-icon { font-size: 1.2rem; }
+
+  &-name {
+    font-family: "JetBrains Mono", monospace;
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--text);
+    flex: 1;
+  }
+
+  &-pct {
+    font-family: "JetBrains Mono", monospace;
+    font-size: 0.8rem;
+    color: var(--accent);
+  }
+
+  &-bar {
+    height: 6px;
+    background: var(--border);
+    border-radius: 100px;
+    overflow: hidden;
+  }
+
+  &-fill {
+    height: 100%;
+    width: var(--w);
+    background: linear-gradient(90deg, var(--accent), var(--accent2));
+    border-radius: 100px;
+    animation: fillBar 1.2s ease both;
+  }
+}
+
+.tech-badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+}
+
+.badge {
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  color: var(--text-muted);
+  font-family: "JetBrains Mono", monospace;
+  font-size: 0.78rem;
+  padding: 0.35rem 0.85rem;
+  border-radius: 100px;
+  transition: all 0.2s;
+
+  &:hover {
+    border-color: var(--accent);
+    color: var(--accent);
+    background: var(--accent-subtle);
+  }
+}
+
+@keyframes fillBar {
+  from { width: 0; }
+  to { width: var(--w); }
+}

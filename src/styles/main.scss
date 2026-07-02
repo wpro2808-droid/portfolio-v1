@@ -1,0 +1,13 @@
+// 1. Конфигурация (переменные и миксины)
+// Сами по себе они код не генерируют, но нужны для работы базовых стилей
+@import 'base';
+
+// 3. (Опционально) Если ты не хочешь импортировать стили внутри JSX компонентов, 
+// ты можешь подключить их все прямо здесь, раскомментировав строчки ниже:
+// @import '../components/Hero';
+// @import '../components/About';
+// @import '../components/Skills';
+// @import '../components/Projects';
+// @import '../components/Contact';
+// @import '../layout/Navbar';
+// @import '../layout/Footer';
