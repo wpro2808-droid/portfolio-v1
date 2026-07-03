@@ -83,32 +83,32 @@
     }
   }
 
- &-scroll {
-  position: absolute;
-  bottom: -60px;
-  left: 0;
-  display: flex;
-  align-items: center;
-  gap: 0.75rem;
-  color: var(--text-muted);
-  font-family: "JetBrains Mono", monospace;
-  font-size: 0.75rem;
-  cursor: pointer;
-  user-select: none;
-  transition: .3s;
-  animation:
-    fadeUp .6s .6s ease both,
-    float 2s ease-in-out infinite;
+  &-scroll {
+    position: absolute;
+    bottom: -60px;
+    left: 0;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    color: var(--text-muted);
+    font-family: "JetBrains Mono", monospace;
+    font-size: 0.75rem;
+    cursor: pointer;
+    user-select: none;
+    transition: .3s;
+    animation:
+      fadeUp .6s .6s ease both,
+      float 2s ease-in-out infinite;
 
-  &:hover {
-    color: var(--accent);
-    transform: translateY(3px);
-  }
+    &:hover {
+      color: var(--accent);
+      transform: translateY(3px);
+    }
 
-  @include respond-to(desktop-sm) {
-    display: none;
+    @include respond-to(desktop-sm) {
+      display: none;
+    }
   }
-}
 
   &-avatar-wrap {
     position: relative;
@@ -131,7 +131,8 @@
 
 
 .dot {
-  width: 8px; height: 8px;
+  width: 8px;
+  height: 8px;
   background: #22c55e;
   border-radius: 50%;
   animation: pulse 2s infinite;
@@ -154,9 +155,9 @@
     color: #fff;
 
     &:hover {
-       background: var(--accent-hover);
-    transform: translateY(-2px);
-    box-shadow: 0 8px 24px var(--accent-glow);
+      background: var(--accent-hover);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px var(--accent-glow);
     }
   }
 
@@ -173,7 +174,8 @@
 }
 
 .scroll-line {
-  width: 40px; height: 1px;
+  width: 40px;
+  height: 1px;
   background: var(--border);
   position: relative;
   overflow: hidden;
@@ -181,8 +183,10 @@
   &::after {
     content: "";
     position: absolute;
-    top: 0; left: -100%;
-    width: 100%; height: 100%;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
     background: var(--accent);
     animation: scan 2s linear infinite;
   }
@@ -191,15 +195,18 @@
 .avatar {
   &-frame {
     position: relative;
-    width: 280px; height: 320px;
+    width: 280px;
+    height: 320px;
 
     @include respond-to(mobile-sm) {
-      width: 220px; height: 260px;
+      width: 220px;
+      height: 260px;
     }
   }
 
   &-placeholder {
-    width: 260px; height: 300px;
+    width: 260px;
+    height: 300px;
     background: var(--card-bg);
     border: 1px solid var(--border);
     border-radius: 24px;
@@ -211,10 +218,22 @@
     overflow: hidden;
 
     @include respond-to(mobile-sm) {
-      width: 210px; height: 250px;
+      width: 210px;
+      height: 250px;
     }
 
-    svg { width: 100px; height: 100px; }
+    svg {
+      width: 100px;
+      height: 100px;
+    }
+
+    .avatar-photo {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
   }
 
   &-text {
@@ -244,16 +263,67 @@
   }
 }
 
-.tag-1 { top: 10px; right: 0; }
-.tag-2 { bottom: 60px; right: 0; }
-.tag-3 { bottom: 30px; left: 0; }
-@keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.4; } }
-@keyframes blink { 0%, 100% { opacity: 1; } 50% { opacity: 0; } }
-@keyframes scan { to { left: 100%; } }
-@keyframes spin { to { transform: rotate(360deg); } }
+.tag-1 {
+  top: 10px;
+  right: 0;
+}
+
+.tag-2 {
+  bottom: 60px;
+  right: 0;
+}
+
+.tag-3 {
+  bottom: 30px;
+  left: 0;
+}
+
+@keyframes pulse {
+
+  0%,
+  100% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0.4;
+  }
+}
+
+@keyframes blink {
+
+  0%,
+  100% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0;
+  }
+}
+
+@keyframes scan {
+  to {
+    left: 100%;
+  }
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
 @keyframes fadeUp {
-  from { opacity: 0; transform: translateY(24px); }
-  to { opacity: 1; transform: translateY(0); }
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 

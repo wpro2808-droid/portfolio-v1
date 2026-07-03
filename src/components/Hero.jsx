@@ -7,22 +7,20 @@ export default function Hero() {
   return (
     <section id="home" className="hero">
       <div className="hero-bg">  </div>
-      
-     
 
       <div className="hero-content">
         <div className="hero-badge">
           <span className="dot" />
-        {t.hero.greeting}
+          {t.hero.greeting}
         </div>
 
         <h1 className="hero-name">
-           {t.hero.name}
+          {t.hero.name}
         </h1>
 
         <div className="hero-role">
           <span className="role-prefix"> </span>
-         {t.hero.role}
+          {t.hero.role}
           <span className="cursor">_</span>
         </div>
 
@@ -55,12 +53,7 @@ export default function Hero() {
       <div className="hero-avatar-wrap">
         <div className="avatar-frame">
           <div className="avatar-placeholder">
-            <svg viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <circle cx="60" cy="45" r="25" fill="var(--accent)" opacity="0.3" />
-              <ellipse cx="60" cy="100" rx="38" ry="28" fill="var(--accent)" opacity="0.2" />
-              <circle cx="60" cy="45" r="20" fill="var(--accent)" opacity="0.5" />
-            </svg>
-            <span className="avatar-text">Your Photo</span>
+            <img src="/avatar.jpg" alt="Konstantin Feoktistov" className="avatar-photo" />
           </div>
           <div className="avatar-ring" />
           <div className="avatar-tag tag-1">React</div>
