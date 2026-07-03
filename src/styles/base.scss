@@ -3,7 +3,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=JetBrains+Mono:wght@400;600;700&family=Inter:wght@400;500;600&display=swap');
 @import 'variables';
 
-// CSS-Переменные для Тем оформления
 .dark {
   --bg: #0d0d10;
   --bg-alt: #111116;
@@ -35,7 +34,6 @@
   --accent-subtle: rgba(59, 130, 246, 0.08);
 }
 
-// Глобальный Reset
 *,
 *::before,
 *::after {
@@ -59,7 +57,6 @@ body {
   overflow-x: hidden;
 }
 
-// Каркас и Структура Секций
 .container {
   max-width: 1100px;
   margin: 0 auto;
