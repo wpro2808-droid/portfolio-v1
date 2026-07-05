@@ -18,6 +18,12 @@ export const translations = {
     about: {
       title: "Обо мне",
       bio: "Я начинающий Frontend Developer, увлечённый созданием современных веб-приложений. Работаю с React, JavaScript, SCSS и TypeScript, уделяя внимание чистому коду, адаптивной вёрстке и удобному пользовательскому интерфейсу. Постоянно развиваю свои навыки, создаю pet-проекты и стремлюсь к профессиональному росту.",
+      terminal: {
+        command: "profile",
+        role: "Frontend разработчик",
+        location: "Ташкент, Узбекистан",
+        status: "Открыт для новых проектов",
+      },
     },
     skills: {
       title: "Мои навыки",
@@ -39,7 +45,7 @@ export const translations = {
         {
           title: "Shop",
           desc: "Интернет-магазин с широким ассортиментом товаров: электроника, мебель, продукты, спортивные товары и многое другое.",
-          tags: ["React, React Router, JavaScript, SCSS, Axios"],
+          tags: ["React", "React Router", "JavaScript", "SCSS", "Axios"],
           githubUrl: "https://diplomka-nu-one.vercel.app/",
           image: "shop",
         },
@@ -91,7 +97,12 @@ export const translations = {
     about: {
       title: "About Me",
       bio: " I am a Junior Frontend Developer passionate about building modern web applications. I work with React, JavaScript, SCSS, and TypeScript, focusing on clean code, responsive design, and intuitive user interfaces. I continuously improve my skills, build pet projects, and strive for professional growth.",
-
+      terminal: {
+        command: "profile",
+        role: "Frontend Developer",
+        location: "Tashkent, Uzbekistan",
+        status: "Open for new projects",
+      },
     },
     skills: {
       title: "My Skills",
@@ -113,7 +124,7 @@ export const translations = {
         {
           title: "Shop",
           desc: "An online store offering a wide range of products, including electronics, furniture, groceries, sports equipment, and more.",
-          tags: ["React, React Router, JavaScript, SCSS, Axios"],
+          tags: ["React", "React Router", "JavaScript", "SCSS", "Axios"],
           githubUrl: "https://diplomka-nu-one.vercel.app/",
           image: "shop",
         },

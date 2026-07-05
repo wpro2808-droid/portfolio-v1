@@ -33,8 +33,8 @@ export default function Contact() {
       setSent(true);
       setForm({ name: "", email: "", message: "" });
       setTimeout(() => setSent(false), 3000);
-    } catch (err) {
-      console.error("Ошибка отправки в Telegram:", err);
+    } catch {
+      // отправка не удалась
     } finally {
       setSending(false);
     }
@@ -54,7 +54,6 @@ export default function Contact() {
         </div>
 
         <div className="contact-grid">
-          {/* Левая колонка: форма */}
           <form className="contact-form" onSubmit={handleSubmit}>
             <input
               type="text"
@@ -88,11 +87,9 @@ export default function Contact() {
             </button>
           </form>
 
-          {/* Правая колонка: карточки соцсетей */}
           <div className="contact-links">
             <div className="social-links">
               <a href="https://github.com/wpro2808-droid" target="_blank" rel="noreferrer" className="social-card">
-                {/* твой SVG */}
                 <div>
                   <span className="social-name">GitHub</span>
                   <span className="social-handle">@wpro2808-droid</span>
@@ -107,7 +104,6 @@ export default function Contact() {
               </a>
 
               <a href="mailto:kostyafeoktistov13@gmail.com" className="social-card">
-                {/* твой SVG */}
                 <div>
                   <span className="social-name">Email</span>
                   <span className="social-handle">kostyafeoktistov13@gmail.com</span>

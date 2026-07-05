@@ -9,16 +9,10 @@
   border-top: 1px solid var(--border);
   background: var(--bg);
 
-  &__logo {
-    font-family: "JetBrains Mono", monospace;
-    font-size: 1.1rem;
-    font-weight: 700;
-    color: var(--accent);
-  }
-
-  &__copy {
+  &-copy {
     font-family: "JetBrains Mono", monospace;
     font-size: 0.82rem;
+    color: var(--text-muted);
   }
 
 
@@ -28,8 +22,7 @@
     text-align: center;
     padding: 1.5rem;
 
-    &__logo,
-    &__copy {
+    &-copy {
       width: 100%;
     }
   }

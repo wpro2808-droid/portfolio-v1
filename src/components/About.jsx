@@ -51,11 +51,11 @@ export default function About() {
 
                     {/* Твоя системная инфа */}
                     <div className="neofetch-info">
-                      <p><span className="info-key">NAME</span>: <span className="info-value">Konstantin Feoktistov</span></p>
-                      <p><span className="info-key">ROLE</span>: <span className="info-value">Frontend Developer</span></p>
-                      <p><span className="info-key">LOC</span>: <span className="info-value">Tashkent, UZ</span></p>
+                      <p><span className="info-key">NAME</span>: <span className="info-value">{t.hero.name}</span></p>
+                      <p><span className="info-key">ROLE</span>: <span className="info-value">{t.about.terminal.role}</span></p>
+                      <p><span className="info-key">LOC</span>: <span className="info-value">{t.about.terminal.location}</span></p>
                       <p><span className="info-key">STACK</span>: <span className="info-value">React, Vite, TS, SCSS</span></p>
-                      <p><span className="info-key">STATUS</span>: <span className="info-value">Open for new projects</span></p>
+                      <p><span className="info-key">STATUS</span>: <span className="info-value">{t.about.terminal.status}</span></p>
                     </div>
                   </div>
 

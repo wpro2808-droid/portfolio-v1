@@ -6,8 +6,6 @@ export default function Hero() {
 
   return (
     <section id="home" className="hero">
-      <div className="hero-bg">  </div>
-
       <div className="hero-content">
         <div className="hero-badge">
           <span className="dot" />
@@ -39,7 +37,7 @@ export default function Hero() {
         <div
           className="hero-scroll"
           onClick={() =>
-            document.getElementById("projects")?.scrollIntoView({
+            document.getElementById("skills")?.scrollIntoView({
               behavior: "smooth",
             })
           }
