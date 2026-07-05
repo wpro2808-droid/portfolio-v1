@@ -7,11 +7,11 @@
     grid-template-columns: 1fr 1fr;
     gap: 4rem;
     align-items: center;
-    transform: translateY(-50px); 
-    // АДАПТИВ
-    @include respond-to(tablet) {
+    transform: translateY(-50px);
+    @include respond-to(desktop-sm) {
       grid-template-columns: 1fr;
       gap: 2.5rem;
+      transform: none;
     }
   }
 
@@ -26,21 +26,15 @@
     display: flex;
     justify-content: center;
 
-    // АДАПТИВ: Поднимаем фото наверх на планшетах/мобилках
-    @include respond-to(tablet) {
+    @include respond-to(desktop-sm) {
       order: -1;
     }
-    @media (max-width: 320px) {
-  .about-grid {
-    transform: none;
-  }
-}
   }
 }
 
 .photo {
-  &-card { 
-    position: relative; 
+  &-card {
+    position: relative;
     width: 100%;
     max-width: 400px;
   }
@@ -66,6 +60,11 @@
   font-family: 'JetBrains Mono', monospace;
   width: 100%;
   box-sizing: border-box;
+
+  @include respond-to(mobile-sm) {
+    max-width: 300px;
+    margin: 0 auto;
+  }
 }
 
 .terminal-bar {
@@ -106,6 +105,11 @@
   line-height: 1.6;
   color: #e2e8f0;
 
+  @include respond-to(mobile-sm) {
+    padding: 0.9rem;
+    font-size: 0.78rem;
+  }
+
   .terminal-line {
     display: flex;
     gap: 0.5rem;
@@ -142,6 +146,11 @@
     flex-direction: column;
     gap: 1rem;
   }
+
+  @include respond-to(mobile-sm) {
+    padding-left: 0;
+    gap: 0.75rem;
+  }
 }
 
 .neofetch-logo {
@@ -159,7 +168,7 @@
   gap: 0.25rem;
 
   p {
-    margin: 0 ;
+    margin: 0;
     color: var(--text);
     font-size: 0.85rem;
   }
@@ -169,8 +178,8 @@
     font-weight: 600;
   }
   .info-value {
-  color: #e2e8f0;
-}
+    color: #e2e8f0;
+  }
 }
 
 @keyframes blink {
@@ -180,18 +189,16 @@
 
 @media (max-width: 320px) {
   .about-grid {
-    transform: none;
-    gap: 24px;
+    gap: 20px;
   }
 
   .terminal-window {
-    max-width: 260px;
-    margin: 0 auto;
+    max-width: 240px;
   }
 
   .terminal-body {
-    padding: 12px;
-    font-size: 12px;
+    padding: 10px;
+    font-size: 11px;
   }
 
   .terminal-bar {
@@ -199,10 +206,10 @@
   }
 
   .neofetch-content {
-    gap: 10px;
+    gap: 8px;
   }
 
   .neofetch-info p {
-    font-size: 6px ;
+    font-size: 11px;
   }
 }
