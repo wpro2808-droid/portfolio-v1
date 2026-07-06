@@ -32,6 +32,7 @@ export default function About() {
                   <div className="terminal-title">portfolio.react</div>
                 </div>
 
+
                 <div className="terminal-body">
                   <div className="terminal-line">
                     <span className="terminal-prompt">kostya@portfolio:~$</span>{" "}
@@ -59,7 +60,6 @@ export default function About() {
                   </div>
                 </div>
               </div>
-
             </div>
           </div>
         </div>
