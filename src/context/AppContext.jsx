@@ -7,9 +7,8 @@ export function AppProvider({ children }) {
   const [theme, setTheme] = useState("dark");
   const [lang, setLang] = useState("ru");
 
-  const toggleTheme = () =>
-    setTheme((prev) => (prev === "dark" ? "light" : "dark"));
-
+  const toggleTheme = () => setTheme((prev) => (prev === "dark" ? "light" : "dark"));
+    
   const toggleLang = () => setLang((prev) => (prev === "ru" ? "en" : "ru"));
 
   const t = translations[lang];

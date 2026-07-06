@@ -86,8 +86,8 @@
   border: 1px solid var(--border);
   color: var(--text-muted);
   font-family: "JetBrains Mono", monospace;
-  font-size: 0.78rem;
-  padding: 0.35rem 0.85rem;
+  font-size: 0.72rem;   // было 0.78rem
+  padding: 0.3rem 0.7rem; // было 0.35rem 0.85rem
   border-radius: 100px;
   transition: all 0.2s;
 
@@ -101,4 +101,16 @@
 @keyframes fillBar {
   from { width: 0; }
   to { width: var(--w); }
+}
+
+@include respond-to(mobile) {
+  .tech-badges {
+    justify-content: center;
+    gap: 0.5rem;
+  }
+
+  .badge {
+    font-size: 0.68rem;
+    padding: 0.3rem 0.65rem;
+  }
 }

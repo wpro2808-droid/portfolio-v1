@@ -5,6 +5,7 @@ import { navbarLinks } from "../data/navbar.js";
 
 export default function Navbar() {
   const { theme, toggleTheme, lang, toggleLang, t } = useApp();
+
   const [menuOpen, setMenuOpen] = useState(false);
 
   return (
@@ -12,7 +13,10 @@ export default function Navbar() {
       <ul className={`nav-links ${menuOpen ? "nav-links--open" : ""}`}>
         {navbarLinks.map((key) => (
           <li key={key}>
-            <a href={`#${key}`} onClick={() => setMenuOpen(false)}>
+            <a
+              href={`#${key}`}
+              onClick={() => setMenuOpen(false)}
+            >
               {t.nav[key]}
             </a>
           </li>
@@ -20,17 +24,30 @@ export default function Navbar() {
       </ul>
 
       <div className="nav-controls">
-        <button className="ctrl-btn" onClick={toggleLang} title="Switch language">
+        <button
+          className="ctrl-btn"
+          onClick={toggleLang}
+          title="Switch language"
+        >
           {lang === "ru" ? "EN" : "RU"}
         </button>
-        <button className="ctrl-btn" onClick={toggleTheme} title="Toggle theme">
+
+        <button
+          className="ctrl-btn"
+          onClick={toggleTheme}
+          title="Toggle theme"
+        >
           {theme === "dark" ? "☀️" : "🌙"}
         </button>
+
         <button
           className={`burger ${menuOpen ? "burger--active" : ""}`}
-          onClick={() => setMenuOpen(prev => !prev)}
+          onClick={() => setMenuOpen((prev) => !prev)}
+          aria-label="Открыть меню"
         >
-          <span /><span /><span />
+          <span />
+          <span />
+          <span />
         </button>
       </div>
     </nav>

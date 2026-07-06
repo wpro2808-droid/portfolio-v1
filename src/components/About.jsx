@@ -19,12 +19,10 @@ export default function About() {
 
           <div className="about-photo-wrap">
             <div className="photo-card">
-              {/* Декоративная рамка на заднем плане */}
               <div className="photo-decoration" />
 
               {/* Окно терминала */}
               <div className="terminal-window">
-                {/* Шапка терминала с кнопками управления */}
                 <div className="terminal-bar">
                   <div className="terminal-buttons">
                     <span className="btn-close"></span>
@@ -34,7 +32,6 @@ export default function About() {
                   <div className="terminal-title">portfolio.react</div>
                 </div>
 
-                {/* Содержимое терминала */}
                 <div className="terminal-body">
                   <div className="terminal-line">
                     <span className="terminal-prompt">kostya@portfolio:~$</span>{" "}
@@ -42,14 +39,12 @@ export default function About() {
                   </div>
 
                   <div className="neofetch-content">
-                    {/* ASCII Кот */}
                     <div className="neofetch-logo">
                       <span> /\_/\</span>
                       <span>( o.o )</span>
                       <span> &gt; ^ &lt; </span>
                     </div>
 
-                    {/* Твоя системная инфа */}
                     <div className="neofetch-info">
                       <p><span className="info-key">NAME</span>: <span className="info-value">{t.hero.name}</span></p>
                       <p><span className="info-key">ROLE</span>: <span className="info-value">{t.about.terminal.role}</span></p>
@@ -59,7 +54,6 @@ export default function About() {
                     </div>
                   </div>
 
-                  {/* Строка с мигающим курсором */}
                   <div className="terminal-line margin-top">
                     <span className="terminal-cursor">_</span>
                   </div>
